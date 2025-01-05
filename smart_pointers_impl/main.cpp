@@ -5,7 +5,7 @@
 
 int main() {
 
-  custom_unique_ptr<int> ptr(new int(42));
+  custom_shared_ptr<int> ptr(new int(42));
   std::cout << "Value: " << *ptr.get() << std::endl;
 
   int *raw_ptr = ptr.release();
@@ -13,7 +13,7 @@ int main() {
   std::cout << "Is nullptr? " << (ptr.get() == nullptr) << std::endl;
   delete raw_ptr;
 
-  custom_unique_ptr<int> ptr2(new int(100));
+  custom_shared_ptr<int> ptr2(new int(100));
   std::cout << "Value: " << *ptr2.get() << std::endl;
 
   ptr2.reset(new int(200));

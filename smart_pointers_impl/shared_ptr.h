@@ -15,52 +15,7 @@ public:
   // delete the copy assignment operator
   custom_shared_ptr operator=(custom_shared_ptr rhs) = delete;
 
-  // Need to implement move semantics
-
-  Type *get() { return data; }
-
-  Type *release() {
-    Type *temp = data;
-    data = nullptr;
-    return temp;
-  }
-
-  void reset(Type *ptr) {
-    if (data) {
-      deleter(data);
-    }
-    data = ptr;
-  }
-
-  Deleter &get_deleter() const { return deleter; }
-
-  ~custom_shared_ptr() {
-    if (data) {
-      deleter(data);
-    }
-  }
-
 private:
   Type *data;
   Deleter deleter;
 };
-
-template <typename Type> custom_shared_ptr<Type> make_unique(Type data);
-
-/*
-
-
-get deleter
-get
-release
-reset
-swap
-
-constructors:
-
-takes nullptr
-pointers
-or other unique pointres
-
-
-*/
