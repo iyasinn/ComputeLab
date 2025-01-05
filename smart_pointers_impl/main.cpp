@@ -1,7 +1,10 @@
 #include "unique_ptr.h"
 #include <iostream>
 
+// Hello
+
 int main() {
+
   custom_unique_ptr<int> ptr(new int(42));
   std::cout << "Value: " << *ptr.get() << std::endl;
 
