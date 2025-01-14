@@ -1,3 +1,4 @@
+#include "Vector.h"
 #include <iostream>
 #include <vector>
 
@@ -9,6 +10,7 @@ int main() {
   std::vector<bool> boolVec;
   std::vector<double> doubleVec;
   std::vector<char> charVec;
+  Vector<int> myIntVec;
 
   // Print sizes of different vector types
   std::cout << "Size of vector<int>: " << sizeof(intVec) << " bytes\n";
