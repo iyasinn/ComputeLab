@@ -7,3 +7,5 @@ Need pointer to start (T\* 8 bytes always)
 On the stack this will occupy 24 bytes of space
 
 On the heap it will occupy 8 \* sizeof(T) bytes
+
+I'm also going to implememtn a fast fast vector
